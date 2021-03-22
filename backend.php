@@ -4,10 +4,10 @@
 
 if(isset( $_GET['uploadfiles'])){
 	//sys_variables
-	$create_time = time();
-	$error = false;
-	$files = array();
-	$current_date = date('y-m-d');
+	//$create_time = time();
+	//$error = false;
+	//$files = array();
+	//$current_date = date('y-m-d');
 	$date = date('y-m-d');
 	
 		//$query_conf_upload = "SELECT * FROM configurations WHERE `key` = 'upload_path';";
@@ -63,16 +63,16 @@ if(isset( $_GET['uploadfiles'])){
 	foreach( $_FILES as $file ){	
 		if(!is_dir($uploaddir)) 
 			mkdir($uploaddir, 0777);
-		//$codename = hash('ripemd160', microtime() . rand(0, 9999));
+		$codename = hash('ripemd160', microtime() . rand(0, 9999));
 		//$type = $file['type'];
 		//$name = $file['name'];
 		
-		//$ext='';
+		$ext='';
 		//if ($type == 'application/vnd.ms-excel') $ext = '.xls';
 		//else if ($type == 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet') $ext = '.xlsx';
-		//$path = $uploaddir . $codename . $ext;
+		$path = $uploaddir . $codename . $ext;
 		//$dbpath = $codename . $ext;
-		//if( move_uploaded_file( $file['tmp_name'], $path ) ){
+		if( move_uploaded_file( $file['tmp_name'], $path ) ){
 			
 			//Запись в таблице f_attachments (Вложение файла)
 			//$att_array = ["file_name" => $name, "file_type" => $type, "linked_publication" => $pub_id ];
@@ -92,8 +92,8 @@ if(isset( $_GET['uploadfiles'])){
 			//$files[] = realpath($r_path);
 			//$dw_path = $codename . $ext;
 			
-		//}
-		//else $error = true;
-	//}
+		}
+		else $error = true;
+	}
 }
 ?>
