@@ -42,4 +42,4 @@ $("form#data").submit(function(e) {
 			return xhr;
 		}
     });	
-});
+//});

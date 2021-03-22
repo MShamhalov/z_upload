@@ -11,8 +11,7 @@
         <script type="text/javascript" src="../z_upload.js"></script>
       </head>
       <body>
-
-          <form method="POST">
+          <form method="POST" enctype="multipart/form-data">
             <label for="myfile" class="nl">select file</label>
             <input name="data" type="file" id="myfile" form="data" class="nl"></input>      
             <progress class="nl" id="progress_bar" value="0" max="100"></progress>

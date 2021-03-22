@@ -15,13 +15,13 @@ if(isset( $_GET['uploadfiles'])){
 		//$data_conf_upload = $result_conf_upload -> fetchAll();
 	//$uploaddir = $data_conf_upload[0]['value'] . $date . '/';
 	$uploaddir = '/var/www/html/z_upload/example/temp/' . $date . '/';
-		
+	//$uploaddir = '/var/www/html/z_upload/example/temp/';	
 		//$fd = fopen("e:\\file.debug", "ab");
 		//	fwrite($fd, $uploaddir  . "\n");
 		//fclose($fd);
 	
 	
-	if (isset($_POST)){
+	//if (isset($_POST)){
 		#foreach($_POST as $current_key => $current_val){
 		#	$curr_action = explode("_", $current_key);
 			
@@ -57,22 +57,22 @@ if(isset( $_GET['uploadfiles'])){
 		//$fd = fopen("e:\\file.debug", "ab");
 		//		fwrite($fd, $query_acl . "\n");
 		//fclose($fd);
-	}
+	//}
 	
 	//work with file
 	foreach( $_FILES as $file ){	
 		if(!is_dir($uploaddir)) 
 			mkdir($uploaddir, 0777);
-		$codename = hash('ripemd160', microtime() . rand(0, 9999));
-		$type = $file['type'];
-		$name = $file['name'];
+		//$codename = hash('ripemd160', microtime() . rand(0, 9999));
+		//$type = $file['type'];
+		//$name = $file['name'];
 		
-		$ext='';
+		//$ext='';
 		//if ($type == 'application/vnd.ms-excel') $ext = '.xls';
 		//else if ($type == 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet') $ext = '.xlsx';
-		$path = $uploaddir . $codename . $ext;
-		$dbpath = $codename . $ext;
-		if( move_uploaded_file( $file['tmp_name'], $path ) ){
+		//$path = $uploaddir . $codename . $ext;
+		//$dbpath = $codename . $ext;
+		//if( move_uploaded_file( $file['tmp_name'], $path ) ){
 			
 			//Запись в таблице f_attachments (Вложение файла)
 			//$att_array = ["file_name" => $name, "file_type" => $type, "linked_publication" => $pub_id ];
@@ -92,8 +92,8 @@ if(isset( $_GET['uploadfiles'])){
 			//$files[] = realpath($r_path);
 			//$dw_path = $codename . $ext;
 			
-		}
-		else $error = true;
-	}
+		//}
+		//else $error = true;
+	//}
 }
 ?>
