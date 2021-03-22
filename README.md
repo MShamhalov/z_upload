@@ -1,5 +1,5 @@
 # z_upload
-Simple file uploader 
+Simple web file uploader 
 
 
 ###############################################################################
@@ -10,3 +10,4 @@ Simple file uploader
 
 First for use this scripts you need JQuery library. You can Download it from 
 official JQuery website or include CDN (by default i use CDN).
+
