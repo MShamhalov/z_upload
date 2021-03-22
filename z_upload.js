@@ -1,11 +1,11 @@
-//b_url = './backend.php?uploadfiles';
+b_url = '../backend.php?uploadfiles';
 
 $("form#data").submit(function(e) {
  	var progressBar = $('#progress_bar');
 	e.preventDefault();    
     var formData = new FormData(this);
     $.ajax({
-        url: '../backend.php?uploadfiles',
+        url: b_url,
         type: 'POST',
         data: formData,
         success: function (data) {
